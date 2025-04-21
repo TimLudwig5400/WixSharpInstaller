@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    tools {
+        msbuild 'msbuild2022'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    bat 'msbuild WixSharpInstaller.csproj /t:rebuild /p:DefineConstants=CTC'
+                }
+            }
+        }
+    }
+}
