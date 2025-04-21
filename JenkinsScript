@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'dotnet build WixSharpInstaller.csproj /p:Configuration=Debug  /p:Platform=AnyCPU /m /noWarn:CS0618,CS1591,CS0067,CS0105,CS0108,CS0162,CS1066,CS0414,CS0169,CS0168,CS0219,CS0114,MSB3305 /verbosity:minimal'
+                    bat 'dotnet build WixSharpInstaller.csproj /p:Configuration=Debug  /p:Platform=AnyCPU'
                 }
             }
         }
