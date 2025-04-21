@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    bat 'msbuild WixSharpInstaller.csproj /t:rebuild /p:DefineConstants=CTC'
+                    bat 'msbuild WixSharpInstaller.sln /t:rebuild'
                 }
             }
         }
