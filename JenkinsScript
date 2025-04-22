@@ -15,8 +15,8 @@ pipeline {
                     CALL "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\VsDevCmd.bat"
              
                     SET NUGET_SOURCE="\\\\pwfile01\\PWBUILD\\nuGetPackages;https://nuget.devexpress.com/%DEVEXPRESS_API%/api"
-                    SET INSTALL_PATH=%WORKSPACE%\\WixSharperInstaller
-                    SET INSTALL_FILE=%INSTALL_PATH%\\WixSharperInstaller.csproj
+                    SET INSTALL_PATH=%WORKSPACE%\\WixSharpInstaller
+                    SET INSTALL_FILE=%INSTALL_PATH%\\WixSharpInstaller.csproj
 
                     REM remove any previous Installers
                     del /Q %INSTALL_PATH%\\*.msi
