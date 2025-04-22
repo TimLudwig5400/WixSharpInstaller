@@ -14,7 +14,7 @@ pipeline {
                     REM The environment does not cross steps, run VsDevCmd again.
                     CALL "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\VsDevCmd.bat"
              
-                    SET NUGET_SOURCE="\\\\pwfile01\\PWBUILD\\nuGetPackages;https://nuget.devexpress.com/%DEVEXPRESS_API%/api"
+                    SET NUGET_SOURCE="https://nuget.devexpress.com/%DEVEXPRESS_API%/api"
                     SET INSTALL_PATH=%WORKSPACE%
                     SET INSTALL_FILE=%INSTALL_PATH%\\WixSharpInstaller.csproj
 
