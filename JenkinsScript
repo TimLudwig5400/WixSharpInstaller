@@ -7,7 +7,14 @@ pipeline {
         stage('Build') {
            steps {
                  script {
-                     bat 'msbuild wixsharpinstaller.csproj -t:restore -p:RestorePackagesConfig=true'
+                     bat '''
+                        REM remove any previous Installers
+                         del /Q %INSTALL_PATH%\\*.msi
+                         del /Q %INSTALL_PATH%\\*.exe
+
+                        msbuild wixsharpinstaller.csproj -t:restore -p:RestorePackagesConfig=true
+
+                    '''
                  }
         }
     }
