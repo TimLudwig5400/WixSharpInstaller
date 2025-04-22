@@ -9,7 +9,7 @@ pipeline {
                  script {
                      bat '''
                          SET INSTALL_PATH=%WORKSPACE%
-                         SET INSTALL_FILE=%INSTALL_PATH%\\WixSharpInstaller.csproj
+                         SET INSTALL_FILE=%INSTALL_PATH%\\WixSharpInstaller.sln
 
                         REM remove any previous Installers
                          del /Q %INSTALL_PATH%\\*.msi
