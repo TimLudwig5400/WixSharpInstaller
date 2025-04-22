@@ -8,6 +8,11 @@ pipeline {
            steps {
                  script {
                      bat '''
+                         CALL "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\VsDevCmd.bat"
+ 
+                         SET INSTALL_PATH=%WORKSPACE%
+                         SET INSTALL_FILE=%INSTALL_PATH%\\WixSharpInstaller.csproj
+
                         REM remove any previous Installers
                          del /Q %INSTALL_PATH%\\*.msi
                          del /Q %INSTALL_PATH%\\*.exe
