@@ -15,7 +15,7 @@ pipeline {
                          del /Q %INSTALL_PATH%\\*.msi
                          del /Q %INSTALL_PATH%\\*.exe
 
-                        msbuild wixsharpinstaller.csproj -t:restore -p:RestorePackagesConfig=true
+                        msbuild %INSTALL_FILE% -t:restore -p:RestorePackagesConfig=true
 
                     '''
                  }
