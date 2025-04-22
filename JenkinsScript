@@ -17,7 +17,12 @@ pipeline {
 
                         msbuild %INSTALL_FILE% -t:restore -p:RestorePackagesConfig=true
 
-                        msbuild %INSTALL_FILE% /t:rebuild /p:Configuration=Debug
+                       ECHO Create the Installer
+                        set nowarns=CS0618,CS1591,CS0067,CS0105,CS0108,CS0162,CS1066,CS0414,CS0169,CS0168,CS0219,CS0114,MSB3305
+                        SET CMD=MSBUILD -m %INSTALL_FILE% /t:rebuild /p:Configuration=Debug  /p:Platform=AnyCPU /m /noWarn:%nowarns% /verbosity:minimal /p:Version=60.0.0.%BUILD_NUMBER%-PreAlpha -bl:package.binlog
+                        ECHO %CMD%
+                        %CMD%
+
 
                     '''
                  }
