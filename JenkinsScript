@@ -17,6 +17,8 @@ pipeline {
 
                         msbuild %INSTALL_FILE% -t:restore -p:RestorePackagesConfig=true
 
+                        msbuild -m %INSTALL_FILE% /t:rebuild /p:Configuration=Debug
+
                     '''
                  }
         }
